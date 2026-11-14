@@ -1,0 +1,85 @@
+.container { width: min(1120px, 92%); margin: 0 auto; }
+.section { padding: 72px 0; }
+.section.alt { background: var(--bg); }
+.section-head { max-width: 640px; margin-bottom: 36px; }
+.eyebrow {
+    font-family: "Fira Sans", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    font-size: .8rem;
+    font-weight: 600;
+    color: var(--orange-dark);
+    margin-bottom: 10px;
+}
+
+/* шапка */
+.site-header {
+    position: sticky; top: 0; z-index: 20;
+    background: var(--white);
+    border-bottom: 1px solid #dcdce6;
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 68px; gap: 20px; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: "Rubik", sans-serif; font-weight: 700; font-size: 1.5rem; color: var(--blue); }
+.logo em { font-style: normal; color: var(--orange); }
+.site-header nav ul { list-style: none; display: flex; gap: 6px; margin: 0; padding: 0; }
+.site-header nav a {
+    display: block; padding: 8px 14px; text-decoration: none; color: var(--text);
+    font-weight: 500; border-bottom: 2px solid transparent; transition: color .2s, border-color .2s;
+}
+.site-header nav a:hover { color: var(--orange-dark); }
+.site-header nav a.active { color: var(--orange-dark); border-bottom-color: var(--orange); }
+.nav-toggle {
+    display: none; background: none; border: 2px solid var(--blue); color: var(--blue);
+    font-family: "Fira Sans", sans-serif; font-weight: 600; padding: 6px 14px; border-radius: var(--radius); cursor: pointer;
+}
+
+/* головний екран */
+.hero { background: var(--bg); padding: 64px 0 72px; }
+.hero-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; }
+.hero p.lead { font-size: 1.1rem; max-width: 520px; }
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 26px; }
+.hero img { border-radius: var(--radius); box-shadow: 14px 14px 0 var(--blue); }
+
+.facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid #cfcfdc; margin-top: 48px; }
+.facts div { padding: 20px 20px 0 0; }
+.facts strong { display: block; font-family: "Rubik", sans-serif; font-size: 1.8rem; color: var(--orange-dark); }
+.facts span { font-size: .92rem; }
+
+.grid { display: grid; gap: 24px; }
+.grid.three { grid-template-columns: repeat(3, 1fr); }
+.grid.two { grid-template-columns: repeat(2, 1fr); }
+
+/* сторінка-заголовок */
+.page-title { background: var(--bg); padding: 48px 0 40px; border-bottom: 1px solid #dcdce6; }
+.page-title p { max-width: 620px; margin: 0; }
+
+/* контакти */
+.contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; }
+
+/* підвал */
+.site-footer { background: var(--text); color: #d7d7e2; padding: 44px 0 20px; font-size: .94rem; }
+.site-footer a { color: #d7d7e2; }
+.site-footer a:hover { color: var(--orange); }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 32px; }
+.site-footer h3 { color: var(--white); font-size: 1rem; }
+.site-footer ul { list-style: none; padding: 0; margin: 0; }
+.site-footer li { margin-bottom: 6px; }
+.copy { border-top: 1px solid #44465c; margin-top: 28px; padding-top: 16px; font-size: .85rem; }
+
+/* адаптивність */
+@media (max-width: 900px) {
+    .hero-grid, .builder, .contact-grid { grid-template-columns: 1fr; }
+    .grid.three { grid-template-columns: repeat(2, 1fr); }
+    .steps { grid-template-columns: repeat(2, 1fr); }
+    .facts { grid-template-columns: repeat(2, 1fr); }
+    .preview { position: static; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 720px) {
+    .nav-toggle { display: block; }
+    .site-header nav { display: none; position: absolute; top: 68px; left: 0; right: 0; background: var(--white); border-bottom: 1px solid #dcdce6; }
+    .site-header nav.open { display: block; }
+    .site-header nav ul { flex-direction: column; padding: 8px 4%; }
+    .grid.three, .grid.two, .row, .row3, .steps, .footer-grid { grid-template-columns: 1fr; }
+    .section { padding: 52px 0; }
+}
