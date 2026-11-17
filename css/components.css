@@ -99,3 +99,45 @@ legend { font-family: "Rubik", sans-serif; font-weight: 500; color: var(--blue);
 .contact-list { list-style: none; padding: 0; margin: 0; }
 .contact-list li { padding: 12px 0; border-bottom: 1px solid #dcdce6; }
 .contact-list span { display: block; font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; color: var(--orange-dark); font-family: "Fira Sans", sans-serif; }
+/* Альтернативна кольорова тема */
+body.alternate-theme {
+    --white: #8c2525;
+    --bg: #b90808;
+    background-color: #982b21;
+}
+
+body.alternate-theme main {
+    background-color: #cd5353;
+}
+/* Підсвічування навігації через JavaScript */
+header nav a.js-nav-highlight {
+    background-color: #ffe1d3;
+    color: #ca4616;
+    border-radius: 4px;
+}
+/* 4. JavaScript-валідація форм */
+
+form .js-invalid {
+    border: 2px solid #e63946 !important;
+}
+
+.js-form-error {
+    color: #e63946;
+    font-size: 13px;
+    margin: 5px 0 10px;
+}
+
+.js-form-success.show {
+    display: block;
+    background-color: #e8f5e9;
+    color: #237a3b;
+    border: 1px solid #237a3b;
+    border-radius: 4px;
+    padding: 12px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.js-form-success[hidden] {
+    display: none !important;
+}
